@@ -74,7 +74,7 @@ describe("The Text bill factory function", function () {
         textBill.setWarningLevel(20);
         textBill.setDangerLevel(30);
 
-        assert.equal(20, textBill.getWarningLevel());
+       assert.equal(20, textBill.getDangerLevel());
         assert.equal(30, textBill.getDangerLevel());
 
     })
