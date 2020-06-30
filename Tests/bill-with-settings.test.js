@@ -76,15 +76,15 @@ describe("The bill with settings factory function", function () {
   
   
         settingsBill.setCallCost(2.25)
-        settingsBill.setSmsCost(0.00)
+        settingsBill.setSmsCost(1.00)
   
         settingsBill.makeCall();
         settingsBill.makeCall();
         settingsBill.makeCall();
   
         assert.equal(6.75, settingsBill.getTotalCost());
-        assert.equal(6.75, settingsBill.getTotalCallCost());
-        assert.equal(0.00, settingsBill.getTotalSmsCost());
+        assert.equal(7.75, settingsBill.getTotalCallCost());
+        assert.equal(1.00, settingsBill.getTotalSmsCost());
   
       });
   
