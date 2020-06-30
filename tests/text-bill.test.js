@@ -1,11 +1,11 @@
-describe("The calculate bill factory function", function () {
+describe("The Text bill factory function", function () {
     it("should be able to set call cost", function () {
-        let textBill = textB();
+        let textBill = text();
 
         textBill.setCallCost(2.75);
         assert.equal(2.75, textBill.getCallCost());
 
-        let textBill2 = textB();
+        let textBill2 = text();
         textBill2.setCallCost(1.85);
         assert.equal(1.85, textBill2.getCallCost());
     })
