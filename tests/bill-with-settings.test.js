@@ -74,7 +74,7 @@ describe("The bill with settings factory function", function () {
       it("should be able to use the call cost set", function () {
         let settingsBill = BillWithSettings();
   
-  
+        settingsBill.setCriticalLevel(10);
         settingsBill.setCallCost(2.25)
         settingsBill.setSmsCost(1.00)
   
@@ -83,8 +83,8 @@ describe("The bill with settings factory function", function () {
         settingsBill.makeCall();
   
         assert.equal(6.75, settingsBill.getTotalCost());
-        assert.equal(7.75, settingsBill.getTotalCallCost());
-        assert.equal(1.00, settingsBill.getTotalSmsCost());
+        assert.equal(6.75, settingsBill.getTotalCallCost());
+        assert.equal(0.00, settingsBill.getTotalSmsCost());
   
       });
   
