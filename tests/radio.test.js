@@ -1,4 +1,4 @@
-describe("The radio bill button factory function", function () {
+describe("The radio bill", function () {
     it("should be able to set call cost", function () {
         let radioBtn = radioBill();
 
@@ -26,9 +26,9 @@ describe("The radio bill button factory function", function () {
 
         let radioBtn = radioBill();
 
-        radioBtn.setWarningLevel(30);
+        radioBtn.setWarningLevel(10);
 
-        assert.equal(30, radioBtn.getWarningLevel());
+        assert.equal(10, radioBtn.getWarningLevel());
 
     })
 
@@ -87,26 +87,20 @@ describe("warning & danger level", function () {
 
         radioBtn.setCallCost(2.75);
         radioBtn.setSmsCost(0.75);
-        radioBtn.setWarningLevel(30);
-        radioBtn.setDangerLevel(50);
+        radioBtn.setWarningLevel(10);
+        radioBtn.setDangerLevel(20);
 
         radioBtn.makeCall();
         radioBtn.makeCall();
         radioBtn.makeCall();
         radioBtn.makeCall();
-        radioBtn.makeCall();
-        radioBtn.makeCall();
-        radioBtn.makeCall();
-        radioBtn.makeCall();
-        radioBtn.makeCall();
-        radioBtn.makeCall();
+        
         
         radioBtn.sendSms();
         radioBtn.sendSms();
         radioBtn.sendSms();
         radioBtn.sendSms();
-        radioBtn.sendSms();
-        radioBtn.sendSms();
+       
 
         assert.equal("warning", radioBtn.totalClassName());
 
@@ -117,8 +111,8 @@ describe("warning & danger level", function () {
 
         radioBtn.setCallCost(2.75);
         radioBtn.setSmsCost(0.75);
-        radioBtn.setWarningLevel(30);
-        radioBtn.setDangerLevel(50);
+        radioBtn.setWarningLevel(10);
+        radioBtn.setDangerLevel(20);
 
         radioBtn.makeCall();
         radioBtn.makeCall();
@@ -145,9 +139,7 @@ describe("warning & danger level", function () {
         radioBtn.sendSms();
         radioBtn.sendSms();
         radioBtn.sendSms();
-        radioBtn.sendSms();
-        radioBtn.sendSms();
-        radioBtn.sendSms();
+     
 
         assert.equal("danger", radioBtn.totalClassName());
     })
