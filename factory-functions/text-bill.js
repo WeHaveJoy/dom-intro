@@ -7,14 +7,14 @@
 var callsTotal = 0;
 var smsTotal = 0;
 
-function totalPhoneBill (billString){
+function textBill (billString){
 var billItems = billString.split (",");
 var billTotal = 0;
 for (var i=0;i<billItems.length;i++){
 var billItem = billItems[i].trim ();
 if (billItem === "call"){
-billTotal += 2.75;
-callsTotal += 2.75;
+billTotal += 1.75;
+callsTotal += 1.75;
 }
 else if (billItem === "sms"){
 billTotal += 0.75;
