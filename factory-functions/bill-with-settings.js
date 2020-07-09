@@ -12,7 +12,7 @@ const smsCostSetting = document.querySelector(".smsTotalSettings");
 
 const totalCostElemThree = document.querySelector(".totalSettings");
 
-var settingsInstance = BillWithSettings()
+var settingsInstance = BillWithSettings();
 
 function updated() {
   settingsInstance.setCallCost(Number(callCost.value));
