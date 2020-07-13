@@ -1,6 +1,6 @@
 function billWithSettings(){
     var theCallCost = 0;
-    var theSmsCost =0;
+    var theSmsCost = 0;
     var theWarningLevel=0;
     var thecriticalLevel= 0;
 
@@ -16,8 +16,8 @@ function billWithSettings(){
     }
 
     function setSmsCost(){
-        theSmsCost += smsCost;
-    }
+        theSmsCost = smsCost;
+   }
 
     function getSmsCost(){
         return theSmsCost;

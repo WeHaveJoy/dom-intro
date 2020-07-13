@@ -1,28 +1,28 @@
 describe("The bill with settings factory function", function () {
 
     it("It should be able to set the call cost", function () {
-      let settingsBill = BillWithSettings();
+      let settingsBill = billWithSettings();
   
       settingsBill.setCallCost(1.85);
       assert.equal(1.85, settingsBill.getCallCost());
   
-      let settingsBill2 = BillWithSettings();
+      let settingsBill2 = billWithSettings();
       settingsBill2.setCallCost(2.75);
       assert.equal(2.75, settingsBill2.getCallCost());
     });
     it("It should be able to set the sms cost", function () {
-      let settingsBill = BillWithSettings();
+      let settingsBill = billWithSettings();
   
       settingsBill.setSmsCost(0.85);
       assert.equal(0.85, settingsBill.getSmsCost());
   
-      let settingsBill2 = BillWithSettings();
+      let settingsBill2 = billWithSettings();
       settingsBill2.setSmsCost(0.75);
       assert.equal(0.75, settingsBill2.getSmsCost());
     });
   
     it("It should be able to set the sms and call cost", function () {
-      let settingsBill = BillWithSettings();
+      let settingsBill = billWithSettings();
   
       settingsBill.setCallCost(2.75);
       settingsBill.setSmsCost(0.85);
@@ -30,7 +30,7 @@ describe("The bill with settings factory function", function () {
       assert.equal(2.75, settingsBill.getCallCost());
       assert.equal(0.85, settingsBill.getSmsCost());
   
-      let settingsBill2 = BillWithSettings();
+      let settingsBill2 = billWithSettings();
   
       settingsBill2.setCallCost(1.75);
       settingsBill2.setSmsCost(0.65);
@@ -40,7 +40,7 @@ describe("The bill with settings factory function", function () {
   
     });
     it("It should be able to set the warning level", function () {
-      let settingsBill = BillWithSettings();
+      let settingsBill = billWithSettings();
   
       settingsBill.setWarningLevel(20)
       assert.equal(20, settingsBill.getWarningLevel());
@@ -49,7 +49,7 @@ describe("The bill with settings factory function", function () {
     });
   
     it("It should be able to set the critical level", function () {
-      let settingsBill = BillWithSettings();
+      let settingsBill = billWithSettings();
   
       settingsBill.setCriticalLevel(30)
       assert.equal(30, settingsBill.getCriticalLevel());
@@ -58,7 +58,7 @@ describe("The bill with settings factory function", function () {
     });
   
     it("It should be able to set the warning & critical level", function () {
-      let settingsBill = BillWithSettings();
+      let settingsBill = billWithSettings();
   
       settingsBill.setCriticalLevel(25)
       settingsBill.setWarningLevel(15)
@@ -72,7 +72,7 @@ describe("The bill with settings factory function", function () {
   
     describe("use values", function () {
       it("should be able to use the call cost set", function () {
-        let settingsBill = BillWithSettings();
+        let settingsBill = billWithSettings();
   
         settingsBill.setCriticalLevel(10);
         settingsBill.setCallCost(2.25)
@@ -89,7 +89,7 @@ describe("The bill with settings factory function", function () {
       });
   
       it("should be able to use the call cost set for 2 calls at 1.35 each", function () {
-        let settingsBill = BillWithSettings();
+        let settingsBill = billWithSettings();
   
   
         settingsBill.setCallCost(1.35)
@@ -106,7 +106,7 @@ describe("The bill with settings factory function", function () {
       });
   
       it("should be able to send 2 sms's at 0.85 each", function () {
-        let settingsBill = BillWithSettings();
+        let settingsBill = billWithSettings();
   
   
         settingsBill.setCallCost(1.35)
@@ -123,7 +123,7 @@ describe("The bill with settings factory function", function () {
       });
   
       it("should be able to send 2 sms's at 0.85 each & make 1 call at 1.35", function () {
-        let settingsBill = BillWithSettings();
+        let settingsBill = billWithSettings();
   
   
         settingsBill.setCallCost(1.35)
@@ -144,7 +144,7 @@ describe("The bill with settings factory function", function () {
     describe("warning & critical level", function () {
   
       it("it should return a class name of 'warning' if waring level is reached", function () {
-        let settingsBill = BillWithSettings();
+        let settingsBill = billWithSettings();
         
   
         settingsBill.setCallCost(1.35)
@@ -165,7 +165,7 @@ describe("The bill with settings factory function", function () {
       });
   
       it("it should return a class name of 'critical' if critical level has been reached", function () {
-        let settingsBill = BillWithSettings();
+        let settingsBill = billWithSettings();
         settingsBill.setCriticalLevel(10);
   
         settingsBill.setCallCost(2.50)
@@ -184,7 +184,7 @@ describe("The bill with settings factory function", function () {
   
       });
       it("it should stop the total call cost from increasing when tge critical level has been reached", function () {
-        let settingsBill = BillWithSettings();
+        let settingsBill = billWithSettings();
   
         settingsBill.setCriticalLevel(10);
         settingsBill.setCallCost(2.50)
@@ -204,7 +204,7 @@ describe("The bill with settings factory function", function () {
       });
   
       it("it should allow the total to increase after reaching the critical level & then upping the critical level", function () {
-        let settingsBill = BillWithSettings();
+        let settingsBill = billWithSettings();
   
   
         settingsBill.setCallCost(2.50)

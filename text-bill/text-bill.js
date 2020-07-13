@@ -1,54 +1,109 @@
-var type = document.querySelector (".billTypeText");
-var button = document.querySelector (".addToBillBtn");
-var callT = document.querySelector (".callTotalOne");
-var smsT = document.querySelector (".smsTotalOne");
-var total = document.querySelector (".totalOne");
+// var type = document.querySelector (".billTypeText");
+// var button = document.querySelector (".addToBillBtn");
+// var callT = document.querySelector (".callTotalOne");
+// var smsT = document.querySelector (".smsTotalOne");
+// var total = document.querySelector (".totalOne");
 
-//var callsTotal = 0;
-//var smsTotal = 0;
+// //var callsTotal = 0;
+// //var smsTotal = 0;
 
-//function totalPhoneBill (billString){
-//var billItems = billString.split (",");
-//var billTotal = 0;
-//for (var i=0;i<billItems.length;i++){
-//var billItem = billItems[i].trim ();
-//if (billItem === "call"){
-//billTotal += 2.75;
-//callsTotal += 2.75;
-//}
-//else if (billItem === "sms"){
-//billTotal += 0.75;
-//smsTotal += 0.75;
-//}
-//}
+// //function totalPhoneBill (billString){
+// //var billItems = billString.split (",");
+// //var billTotal = 0;
+// //for (var i=0;i<billItems.length;i++){
+// //var billItem = billItems[i].trim ();
+// //if (billItem === "call"){
+// //billTotal += 2.75;
+// //callsTotal += 2.75;
+// //}
+// //else if (billItem === "sms"){
+// //billTotal += 0.75;
+// //smsTotal += 0.75;
+// //}
+// //}
 
 
-//var roundedBillTotal = billTotal.toFixed (2);
-//callT.innerHTML = (callsTotal).toFixed (2);
-//smsT.innerHTML = (smsTotal).toFixed (2);
-//return roundedBillTotal;
-//}
+// //var roundedBillTotal = billTotal.toFixed (2);
+// //callT.innerHTML = (callsTotal).toFixed (2);
+// //smsT.innerHTML = (smsTotal).toFixed (2);
+// //return roundedBillTotal;
+// //}
 
-const TextBill
-function styleTotalColor (roundedBillTotal){
-const currentTotal = Number (roundedBillTotal);
+// const TextBill
+// function styleTotalColor (roundedBillTotal){
+// const currentTotal = Number (roundedBillTotal);
 
-total.classList.remove("danger")
-total.classList.remove ("warning")
+// total.classList.remove("danger")
+// total.classList.remove ("warning")
 
-if (currentTotal >= 50 ){
-total.classList.add ("danger")
+// if (currentTotal >= 50 ){
+// total.classList.add ("danger")
+// }
+// else if (currentTotal >= 30 && currentTotal <= 50 ) { 
+// total.classList.add ("warning")
+// }
+// }
+
+// function calculateBtnClicked (){
+// var billString = type.value;
+// const roundedBillTotal = totalPhoneBill (billString);
+
+// total.innerHTML = roundedBillTotal
+// styleTotalColor (roundedBillTotal);
+// }
+// button.addEventListener ("click", calculateBtnClicked);
+
+
+
+
+function calculateTextBill() {
+   
+    
+
+    var callsTotal = 0
+    var smsTotal = 0 
+
+    function textBillTotal(billTypeEntered) {
+        
+        if (billTypeEntered === "call"){
+            callsTotal += 2.75
+        }
+        else if (billTypeEntered === "sms"){
+            smsTotal += 0.75;
+        }
+    }
+
+    function getCallTotal() {
+         
+
+        return callsTotal;
+
+
+    }
+
+    function getSmsTotal() {
+        return smsTotal;
+    }
+    function getTotal() {
+        return smsTotal + callsTotal;
+    }
+      
+    function styleColor() {
+
+        if (getTotal() >= 30) {
+            return "danger"
+        }
+        else if (getTotal() >= 20) {
+            return "warning"
+        }
+    }
+
+        return {
+
+        textBillTotal,
+        getCallTotal,
+        getSmsTotal,
+        getTotal,
+        styleColor,
+    }
 }
-else if (currentTotal >= 30 && currentTotal <= 50 ) { 
-total.classList.add ("warning")
-}
-}
-
-function calculateBtnClicked (){
-var billString = type.value;
-const roundedBillTotal = totalPhoneBill (billString);
-
-total.innerHTML = roundedBillTotal
-styleTotalColor (roundedBillTotal);
-}
-button.addEventListener ("click", calculateBtnClicked);

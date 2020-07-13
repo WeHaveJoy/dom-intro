@@ -5,27 +5,27 @@ var smsTotalThree = 0;
 var totalBillCost = 0;
 
 
-//  settings variables
+
 var callCostElement = document.querySelector(".callCostSetting");
 
 var smsCostElement = document.querySelector(".smsCostSetting");
 var warningSettings = document.querySelector(".warningLevelSetting");
 var criticalSettings = document.querySelector(".criticalLevelSetting");
 
-// settings values
+
 var callCostValue = 0;
 var smsCostValue = 0;
 var warningLevel = 0;
 var criticalLevel = 0;
 
-//get a reference to the add button
+
 var addButton = document.querySelector(".checkedButton");
 
-//get a reference to the add button
+
 var updateButton = document.querySelector(".updateSettings");
 
 
-// create a variables that will keep track of all three totals.
+
 var total = document.querySelector(".totalSettings");
 
 
@@ -42,7 +42,7 @@ function settingsBill(){
 updateButton.addEventListener('click', settingsBill);
 
 
-//  radio buttons function
+
 function radioSettings(){
     var checkedBtn = document.querySelector("input[name='billItemTypeWithSettings']:checked");
 
@@ -63,13 +63,13 @@ function radioSettings(){
     totalBillCost = callTotalThree + smsTotalThree;
     total.innerHTML = totalBillCost.toFixed(2);
     
-    // adding color accordingly
+    
     totalColor(totalBillCost);
 }
 
 addButton.addEventListener('click', radioSettings);
 
-//  color function
+
 function totalColor(totalBillCost){
      total.classList.remove("danger");
      total.classList.remove("warning");
