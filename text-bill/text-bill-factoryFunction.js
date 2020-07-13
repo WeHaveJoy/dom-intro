@@ -1,31 +1,61 @@
-//var type = document.querySelector (".billTypeText");
-//var button = document.querySelector (".addToBillBtn");
-//var callT = document.querySelector (".callTotalOne");
-//var smsT = document.querySelector (".smsTotalOne");
-//var total = document.querySelector (".totalOne");
-
-var callsTotal = 0;
-var smsTotal = 0;
-
-function textBill (billString){
-var billItems = billString.split (",");
-var billTotal = 0;
-for (var i=0;i<billItems.length;i++){
-var billItem = billItems[i].trim ();
-if (billItem === "call"){
-billTotal += 1.75;
-callsTotal += 1.75;
-}
-else if (billItem === "sms"){
-billTotal += 0.75;
-smsTotal += 0.75;
-}
-}
-var roundedBillTotal = billTotal.toFixed (2);
-callT.innerHTML = (callsTotal).toFixed (2);
-smsT.innerHTML = (smsTotal).toFixed (2);
-return roundedBillTotal;
-}
+const type = document.querySelector (".billTypeText");
+const button = document.querySelector (".addToBillBtn");
+const callT = document.querySelector (".callTotalOne");
+const smsT = document.querySelector (".smsTotalOne");
+const total = document.querySelector (".totalOne");
 
 
-button.addEventListener ("click", calculateBtnClicked);
+function phoneBill (billString){
+
+
+    var callsTotal = 0
+    var smsTotal = 0 
+
+    function textBillTotal(billTypeEntered) {
+        
+        if (billTypeEntered === "call"){
+            callsTotal += 2.75
+        }
+        else if (billTypeEntered === "sms"){
+            smsTotal += 0.75;
+        }
+    }
+
+    function getCallTotal() {
+         
+
+        return callsTotal;
+
+
+    }
+
+    function getSmsTotal() {
+        return smsTotal;
+    }
+    function getTotal() {
+        return smsTotal + callsTotal;
+    }
+      
+    function styleColor() {
+
+        if (getTotal() >= 50) {
+            return "danger"
+        }
+        else if (getTotal() >= 30) {
+            return "warning"
+        }
+    }
+
+        return {
+
+        textBillTotal,
+        getCallTotal,
+        getSmsTotal,
+        getTotal,
+        styleColor,
+    }
+}
+
+
+
+
